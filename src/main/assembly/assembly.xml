@@ -1,0 +1,43 @@
+<assembly>
+    <id>bin</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+
+    <dependencySets>
+        <dependencySet>
+            <useProjectArtifact>false</useProjectArtifact>
+            <outputDirectory>lib</outputDirectory>
+            <unpack>false</unpack>
+        </dependencySet>
+    </dependencySets>
+
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>src/main/scripts</directory>
+            <outputDirectory/>
+            <includes>
+                <include>start.sh</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>.</directory>
+            <outputDirectory/>
+            <includes>
+                <include>input/*</include>
+                <include>out</include>
+                <include>error</include>
+            </includes>
+        </fileSet>
+
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <outputDirectory/>
+            <includes>
+                <include>better.jar</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>
